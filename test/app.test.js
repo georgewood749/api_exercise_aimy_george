@@ -28,7 +28,7 @@ describe('API server', () => {
             .expect({
                 id: 2,
                 name: 'Zelda',
-                image: 'assets/cat2.png'
+                image: '../assets/cat2.png'
             }, done)
     })
 
