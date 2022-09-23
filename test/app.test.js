@@ -20,6 +20,19 @@ describe('API server', () => {
     })
 
     it('retrieves all cats', (done) => {
-        request(api).get('/cat').expect(200, done);
+        request(api).get('/cats').expect(200, done);
+    })
+
+    it('retrieves a specific cat', (done) => {
+        request(api).get('/cats/2').expect(200)
+            .expect({
+                id: 2,
+                name: 'Zelda',
+                image: 'assets/cat2.png'
+            }, done)
+    })
+
+    it('responds to invalid methods with 405', (done) => {
+        request(api).post('/cats').expect(405, done)
     })
 })
