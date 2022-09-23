@@ -12,13 +12,13 @@ const fetchAsync = async (index) => {
     catImg.src = catData.image
 }
 
-fetchAsync(1).catch(err => console.log(err))
-
 let index = 1;
-const button = document.getElementById('nextCat')
+fetchAsync(index).catch(err => console.log(err))
+
+const button = document.getElementById('nextCat');
 button.addEventListener('click', () => {
     index++
-    if (index == 4) {
+    if (index === 4) {
         index = 1;
     }
     fetchAsync(index).catch(err => console.log(err))
