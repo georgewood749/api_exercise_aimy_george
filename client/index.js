@@ -1,3 +1,5 @@
+const { newCat } = require("../models/cat");
+
 const fetchAsync = async (index) => {
     const rawData = await fetch(`http://localhost:3000/cats/${index}`);
     const catData = await rawData.json();
@@ -22,4 +24,9 @@ button.addEventListener('click', () => {
         index = 1;
     }
     fetchAsync(index).catch(err => console.log(err))
+})
+
+const newCatButton = document.getElementById('addCat')
+newCatButton.addEventListener('click', () => {
+    newCat
 })
