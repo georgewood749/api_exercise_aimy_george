@@ -20,7 +20,9 @@ class Cat {
 
     static newCat(cat) {
         const newCatId = catData.length + 1;
-        const newCat = new Cat({id})
+        const newCat = new Cat({id: newCatId, ...cat})
+        catData.push(newCat)
+        return newCat
     }
 }
 
