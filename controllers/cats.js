@@ -9,8 +9,8 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
     const catId = parseInt(req.params.id);
-    const selectedPoke = Cat.findById(catId);
-    res.send(selectedPoke);
+    const selectedCat = Cat.findById(catId);
+    res.send(selectedCat);
 })
 
 router.post('/', (req, res) => {

@@ -17,6 +17,11 @@ class Cat {
         const cat = new Cat(catData);
         return cat;
     }
+
+    static newCat() {
+        const newCatId = catData.length + 1;
+        const newCat = new Cat({id})
+    }
 }
 
 module.exports = Cat;
