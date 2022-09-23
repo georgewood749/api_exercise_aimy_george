@@ -24,7 +24,7 @@ describe('API server', () => {
     })
 
     it('retrieves a specific cat', (done) => {
-        request(api).get('/cats/3').expect(200)
+        request(api).get('/cats/2').expect(200)
             .expect({
                 id: 2,
                 name: 'Zelda',

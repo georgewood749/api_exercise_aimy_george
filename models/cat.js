@@ -13,8 +13,8 @@ class Cat {
     }
 
     static findById(id) {
-        const catData = catData.filter(cat => cat.id == id)[0];
-        const cat = new Cat(catData);
+        const catsData = catData.filter(cat => cat.id == id)[0];
+        const cat = new Cat(catsData);
         return cat;
     }
 

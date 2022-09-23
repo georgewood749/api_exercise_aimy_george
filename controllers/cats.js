@@ -13,6 +13,20 @@ router.get('/:id', (req, res) => {
     res.send(selectedCat);
 })
 
+router.get('/:id', (req, res) => {
+    try {
+        const id = parseInt(req.params.id);
+        const selectedCat = Cat.findById(id);
+        if (!selectedCat) {
+            throw new Error('This cat does not exist')
+        }
+        res.send(selectedCat)
+    } catch (err) {
+        console.log(err)
+        res.status(404).send({message: err.message})
+    }
+})
+
 router.post('/', (req, res) => {
     res.status(405).send('Not Allowed yet!');
 })
