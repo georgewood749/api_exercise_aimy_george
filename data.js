@@ -1,4 +1,4 @@
-const cats = [
+const catsArray = [
     {
         id: 1,
         name: 'Mittens',
